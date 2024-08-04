@@ -1,6 +1,11 @@
+import './Todo.css'
+
 function Todo() {
     return (
-        <div>Todo</div>
+        <div className='todo'>
+        <h2>Finish FES</h2> 
+        <button>Delete</button>
+      </div>
     )
 }
 
