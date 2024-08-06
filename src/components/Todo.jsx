@@ -1,10 +1,26 @@
 import './Todo.css'
 
-function Todo() {
+
+
+/* function Todo(props){} 
+
+this is when you wanna use other properties, by accessing it like {props.title }
+*/
+function Todo({title, paragraph}) {
+    function deleteTodo() {
+        console.log('deleteTodo()', title.toUpperCase())
+    }
+
     return (
         <div className='todo'>
-        <h2>Finish FES</h2> 
-        <button>Delete</button>
+        <h2> {title} </h2> 
+        <p>{paragraph}</p>
+        <button onClick={deleteTodo}>Delete</button>
+        {/* DO NOT USE () WHEN CALLING A FUNCTION */}
+
+        {/* if you need to, use onClick{() => deleteTodo(1)}
+        the arrow makes it so it does not execute immediately  
+        */}
       </div>
     )
 }
