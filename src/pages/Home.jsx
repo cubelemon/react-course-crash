@@ -17,22 +17,31 @@ function Home() {
   useEffect(() => {
     setTimeout(() => {
       fetchUsers();
-    }, 0);
+    }, 2000);
   });
+
+  function renderUsers() {
+    return users.map((user) => (
+            <Link to = {`/users/${user.id}`} key = {user.id}>
+              <User
+              id={user.id}
+              name={user.name}
+              email={user.email}
+              username={user.username}
+              //username is the prop, {user.username} is the data that needs to be passed in
+              />
+            </Link>  
+            )) 
+  }
+
+  function renderSkeletonLoading() {
+    return <h1>Loading...</h1>
+  }
+
   return (
     <div>
-      {users.map((user) => (
-      <Link to = {`/users/${user.id}`} key = {user.id}>
-        
-        <User
-        id={user.id}
-        name={user.name}
-        email={user.email}
-        username={user.username}
-        //username is the prop, {user.username} is the data that needs to be passed in
-        />
-      </Link>  
-      ))}
+      {users.length ? renderUsers() : renderSkeletonLoading()
+    }
     </div>
   );
 
