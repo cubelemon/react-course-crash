@@ -7,8 +7,8 @@ import Contact from './pages/Contact'
 
 function App() {
   return (
-    <div>
       <Router>
+        {/* Everything has to be wrapped around Router */}
         <nav>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
@@ -32,7 +32,7 @@ function App() {
           <Route path="/contact" element={<Contact/>}></Route>
         </Routes>
       </Router>
-      </div>
+  
   )
 }
 export default App;
