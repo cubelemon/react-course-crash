@@ -21,15 +21,15 @@ function App() {
     setShowModal(false)
   }
 
-useEffect(() => {
-  console.log('ONLY on mount'
-  )
-}, [])
+  useEffect(() => {
+    console.log('ONLY on mount'
+    )
+  }, [])
 
-useEffect(() => {
-  console.log('EVERY render'
-  )
-},)
+  useEffect(() => {
+    console.log('EVERY render'
+    )
+  },)
 
   useEffect(()=>{
     console.log(`on mount AND on showModal ${showModal} change`)
