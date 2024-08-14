@@ -6,16 +6,14 @@ import './Todo.css'
 
 this is when you wanna use other properties, by accessing it like {props.title }
 */
-function Todo({title, paragraph}) {
-    function deleteTodo() {
-        console.log('deleteTodo()', title.toUpperCase())
-    }
+function Todo({title, paragraph, onTodoDelete}) {
+
 
     return (
         <div className='todo'>
         <h2> {title} </h2> 
         <p>{paragraph}</p>
-        <button onClick={deleteTodo}>Delete</button>
+        <button onClick={onTodoDelete}>Delete</button>
         {/* DO NOT USE () WHEN CALLING A FUNCTION */}
 
         {/* if you need to, use onClick{() => deleteTodo(1)}
